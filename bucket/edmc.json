@@ -1,0 +1,37 @@
+{
+    "version": "5.10.1",
+    "description": "Elite: Dangerous Market Connector downloads commodity market and other station data from the game Elite: Dangerous for use with all popular online and offline trading tools.",
+    "homepage": "https://github.com/EDCD/EDMarketConnector",
+    "license": {
+        "identifier": "GPL-2.0"
+    },
+    "innosetup": true,
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/EDCD/EDMarketConnector/releases/download/Release%2F5.10.1/EDMarketConnector_Installer_5.10.1.exe",
+            "hash": "ec8da212fbd6e5825576a0a50637cb5c52088e5cf6bd2d481e0a102c9b3a36fa"
+        }
+    },
+    "shortcuts": [
+        [
+            "EDMarketConnector.exe",
+            "..\\Elite Dangerous Tools\\ED Market Connector"
+        ],
+        [
+            "EDMarketConnector.exe",
+            "..\\Elite Dangerous Tools\\ED Market Connector (for authentication)",
+            "--force-localserver-for-auth"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/EDCD/EDMarketConnector",
+        "regex": "/releases/tag/Release%2F?([\\d.]+[\\-a-z]*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/EDCD/EDMarketConnector/releases/download/Release%2F$version/EDMarketConnector_Installer_$version.exe"
+            }
+        }
+    }
+}
